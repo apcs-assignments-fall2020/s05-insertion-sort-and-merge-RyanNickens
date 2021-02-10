@@ -9,13 +9,13 @@ public class MyMain {
         //for loop to get and compare indexes
         for (int i = 0; i < list.size(); i++) {
             int atm = list.indexOf(i);
-            int j = i;
-            while((j > 0) && (list.indexOf(j - 1) > atm)) {
-                list.set(j, list.indexOf(j - 1));
-                j--;
+            int second = i;
+            while((second > 0) && (list.indexOf(second - 1) > atm)) {
+                list.set(second, list.indexOf(second - 1));
+                second--;
             }
             //setting sorted array value of atm @ j index
-            sorted.set(j, atm);
+            sorted.set(second, atm);
         }
         return sorted;
     }
@@ -32,6 +32,7 @@ public class MyMain {
         int third = 0;
         //code for multiple cases
         //tells where to put values once compared
+        //used couners to track where i was in the array
         while (first < arr1.length && second < arr2.length) {
             if (arr1[first] < arr2[second]) {
                 sorted[third] = arr1[first];
